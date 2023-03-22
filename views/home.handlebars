@@ -1,0 +1,21 @@
+<h1 class="display-6 text-center">All Blog Entries</h1>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+
+            {{!-- for each loop that display every blog post in the data base in a card border --}}
+            {{#each allBlogs}}
+
+            <div class="card border">
+            <div class="card-header border"><h5 class="card-title"><a href="post/{{id}}">{{title}}</a></h5></div>
+            <div class="card-body text">
+                <p class="card-text">{{text}}</p>
+            </div>
+            <div class="card-footer bg-transparent border">Create by: {{User.email}} @ {{User.createdAt}}</div>
+            </div>
+
+            <br>
+            {{/each}}
+        </div>
+    </div>
+</div>

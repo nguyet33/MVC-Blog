@@ -1,0 +1,22 @@
+<h1 class="display-6 text-center">My Blog Post</h1>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+            <a class="btn btn-primary d-flex justify-content-center" role="button" href="/createpost">Create a Post</a>
+            <br>
+            {{!-- for each loop that loops through the array that was passed in to display every blog post --}}
+            {{#each allBlogs}}
+
+            <div class="card border">
+            <div class="card-header border"><h5 class="card-title"><a href="edit/{{id}}">{{title}}</a></h5></div>
+            <div class="card-body text">
+                <p class="card-text">{{text}}</p>
+            </div>
+            <div class="card-footer bg-transparent border">Created @ {{createdAt}}</div>
+            </div>
+            <br>
+
+            {{/each}}
+        </div>
+    </div>
+</div>

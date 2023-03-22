@@ -1,0 +1,21 @@
+<h1 class="display-6 text-center">Update your post</h1>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <input class="form-control" id="editTitle" value="{{blog.title}}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">textarea</label>
+                    <textarea class="form-control" id="editText" rows="3">{{blog.text}}</textarea>
+                </div>
+            <button type="submit" class="btn btn-primary" id="editForm">Update</button>
+            <button type="submit" class="btn btn-primary" id="deleteForm">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/edit.js"></script>

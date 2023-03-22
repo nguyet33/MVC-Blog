@@ -1,0 +1,42 @@
+<h1 class="display-6 text-center">Comment on a Post</h1>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+
+            <div class="card border">
+            <div class="card-header border"><h5 class="card-title">{{blog.title}}</h5></div>
+            <div class="card-body text">
+                <p class="card-text">{{blog.text}}</p>
+            </div>
+            <div class="card-footer bg-transparent border">Created by: {{blog.User.email}} @ {{blog.createdAt}}</div>
+            </div>
+            <br>
+
+            <h4>Comments</h4>
+
+            {{!-- for each loop that display every comment that is tied to a blog post  --}}
+            {{#each blog.Comments}}
+            <div class="alert alert-warning">
+                {{text}} 
+                <hr>
+                by: {{User.email}} @ {{createdAt}}
+            </div>
+            {{/each}}
+            
+            {{!-- if statement to check if a user is logged in. if so it will display a form where users can comment on a post --}}
+            {{#if session.userId}}
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Add a Comment</label>
+                        <textarea class="form-control" id="createComment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="postComment">Comment</button>
+                </form>
+            {{/if}}
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>
